@@ -52,3 +52,10 @@ console.log(typeof b3)
 
 //--------------------4-------------
 
+let name = prompt(`Enter your name`)
+let middleName1 = prompt(`Enter your miidlename`)
+let old = prompt(`How old are you`)
+
+console.log(name)
+console.log(middleName1)
+console.log(old)
