@@ -80,9 +80,27 @@ function users (arr){
 }
 users(arr3)
 // - створити функцію яка повертає найменьше число з масиву
+let arrMin = [1, 4, 23, 2]
+function arr4 (arr){
+    let result = 0
+    for (let i = 0 ; i < arr; i ++ ){
 
-// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-
+        if (result > arr[i]){
+            result = arr[i]
+        }
+    }
+    return result
+}
+console.log(arr4(arrMin))
+// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) /0/->13
+function sum (arr){
+    let result = 0
+    for (let num of arr){
+        result = result + num
+    }
+    return result
+}
+console.log(sum([1,2,10]))
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
