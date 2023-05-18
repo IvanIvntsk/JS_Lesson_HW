@@ -136,11 +136,22 @@ console.log(diamond)
 // - всі трефи від 9 та більше
 let club = cards.filter(card => card.cardSuit === `clubs` && card.value >= `9`)
 console.log(club)
-// Не можу зрозуміти як шукати числові
 // =========================
 
 //
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+console.log(cards.reduce((value1, card) => {
+    if (card.cardSuit === `spade`){
+        value1.spades.push(card)
+    }else if (card.cardSuit === `diamond`){
+        value1.diamonds.push(card)
+    } else if(card.cardSuit === `heart`){
+        value1.hearts.push(card)
+    }else if (card.cardSuit === `clubs`){
+        value1.clubs.push(card)
+    }
+    return value1
+}, {spades: [],diamonds:[], hearts: [], clubs: []}))
 // {
 //     spades:[],
 //         diamonds:[],
