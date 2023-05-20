@@ -21,7 +21,7 @@ console.log(s3.toLowerCase(),st3.toLowerCase(),str3.toLowerCase())
 
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   ';
-        console.log(str.replaceAll(' ',''))
+        console.log(str.trim())
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';
@@ -134,7 +134,7 @@ console.log(cardRed)
 let diamond = cards.filter(card => card.cardSuit === `diamond`)
 console.log(diamond)
 // - всі трефи від 9 та більше
-let club = cards.filter(card => card.cardSuit === `clubs` && card.value >= `9`)
+let club = cards.filter(card => [`9`, `10`, `jack`, `queen`, `king`,`ace`].includes(card.value) && card.cardSuit === `clubs`)
 console.log(club)
 // =========================
 
