@@ -64,12 +64,13 @@ console.log(clientSort)
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-function Car (model, manufactur, year, maxspeed, engine){
+function Car (model, manufactur, year, maxspeed, engine, drivers){
     this.model = model;
     this.manufactur = manufactur;
     this.year = year;
     this.maxspeed = maxspeed;
-    this.engine = engine
+    this.engine = engine;
+    this.drivers = drivers;
     this.drive = function (msg){
         console.log(`Їдемо зі швидкістю ${this.maxspeed} км/год`)
     }
@@ -80,11 +81,12 @@ function Car (model, manufactur, year, maxspeed, engine){
         console.log(this.maxspeed + newSpeed)
     }
     this.changeYear = function (newValue) {
-    if (addCar.year !== 2020 || newValue !== 2023)
-        return newValue
+        console.log(this.year = newValue)
 
     }
-    console.log
+    this.addDriver = function (driver){
+        console.log(this.drivers = driver)
+    }
 
 }
     let addCar = new Car(`Skoda`,`VG`, 2020, 220, 2)
@@ -92,6 +94,7 @@ function Car (model, manufactur, year, maxspeed, engine){
     addCar.info()
     addCar.increaseMaxSpeed(10)
     addCar.changeYear(2023)
+    addCar.addDriver([`Ihor`,`Pro`])
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
@@ -99,10 +102,78 @@ function Car (model, manufactur, year, maxspeed, engine){
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
+class Car2 {
+    constructor(model, manufactur, year, maxspeed, engine, drivers) {
+        this.model = model;
+        this.manufactur = manufactur;
+        this.year = year;
+        this.maxspeed = maxspeed;
+        this.engine = engine;
+        this.drivers = drivers;
+    }
+        drive(msg){
+            console.log(`Їдемо зі швидкістю ${this.maxspeed} км/год`)
+        }
+        info(model, manufactur, YearCar){
+            console.log(`Model: ${this.model}, Manufactur: ${this.manufactur}, Year Car: ${this.year}`)
+        }
+        increaseMaxSpeed(newSpeed){
+            console.log(this.maxspeed + newSpeed)
+        }
+        changeYear (newValue) {
+            console.log(this.year = newValue)
+
+        }
+        addDriver(driver){
+            console.log(this.drivers = driver)
+        }
+
+    }
+    let addCar2 = new Car(`Skoda`,`VG`, 2020, 220, 2)
+addCar.drive()
+addCar.info()
+addCar.increaseMaxSpeed(10)
+addCar.changeYear(2023)
+addCar.addDriver([`Ihor`,`Pro`])
+
 //
 //
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+class Popelushka{
+    constructor(Name, age, size) {
+        this.Name = Name;
+        this.age = age;
+        this.size = size;
+    }
+}
+class Prince{
+    constructor(Name, age, search) {
+        this.Name = Name;
+        this.age = age;
+        this.search = search;
+    }
+    findPopelushka(arr){
+        for (let searching of arr){
+            if (searching.size === this.search){
+                return searching
+            }
+        }
+    }
+}
+let arrPopelushka = [
+    new Popelushka(`Klara`,20,33),
+    new Popelushka(`Kara`,21,35),
+    new Popelushka(`Kira`,25,38),
+    new Popelushka(`Mara`,27,25),
+    new Popelushka(`Sara`,33,22),
+    new Popelushka(`Dara`,18,42),
+    new Popelushka(`Kola`,24,24),
+    new Popelushka(`Yula`,13,31),
+    new Popelushka(`Julia`,56,38),
+    new Popelushka(`Mira`,86,40)
+];
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+let prince = new Prince (`Sem`,22,25)
+console.log(prince.findPopelushka(arrPopelushka))
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
