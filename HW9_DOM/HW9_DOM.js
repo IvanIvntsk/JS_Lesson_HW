@@ -5,10 +5,7 @@
 // - додати цей блок в body.
 // - клонувати його повністю, та додати клон в body.
 let div = document.createElement(`div`)
-div.classList.add(`wrap`)
-div.classList.add(`collapse`)
-div.classList.add(`alpha`)
-div.classList.add(`beta`)
+div.classList.add(`wrap`,`collapse`,`alpha`,`beta`)
 div.style.backgroundColor = `red`
 div.style.color = `black`
 div.style.fontSize = `50px`
@@ -23,7 +20,7 @@ let array = ['Main','Products','About us','Contacts']
 let ul  = document.createElement(`ul`)
 for (let ulElement of array) {
     let li = document.createElement(`li`)
-    li.innerText = `${array}`
+    li.innerText = `${ulElement}`
     ul.appendChild(li)
 }
     document.body.appendChild(ul)
@@ -78,7 +75,7 @@ for (let i = 0; i < coursesAndDurationArray2.length; i++) {
 
     document.body.appendChild(div)
 }
-// ЧОМУ НЕ ВИВОДИТЬ?(
+
 // ==========================
 //
 // - є масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
@@ -177,14 +174,15 @@ for (const coursesArrayElement of coursesArray2) {
     let arrBlock2 = document.createElement(`div`)
     arrBlock2.innerText = `monthDuration: ${coursesArrayElement.monthDuration} - hourDuration: ${coursesArrayElement.hourDuration}`
     let arrUl = document.createElement(`ul`)
-    // Знаю має бути цикл але чомусь з ним мені ламається уся структура
-    let arrLi = document.createElement(`li`)
-    arrUl.appendChild(arrLi)
-    arrLi.innerText = `${coursesArrayElement.modules}`
+    for (const arrUlElement of coursesArrayElement.modules) {
+
+        let arrLi = document.createElement(`li`)
+        arrLi.innerText = `${arrUlElement}`
+        arrUl.appendChild(arrLi)
+    }
     arrBlock.appendChild(h1)
     arrBlock.appendChild(arrBlock2)
-    arrBlock.appendChild(arrLi)
-
+    arrBlock.appendChild(arrUl)
     document.body.appendChild(arrBlock)
 }
 // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
