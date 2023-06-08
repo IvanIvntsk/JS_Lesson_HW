@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+
+    <style>
+        input{
+            width: 200px;
+            height: 30px;
+            border-radius: 10px ;
+
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+
+    <form name="form1">
+        Ім'я:
+        <div>
+           <input type="text" name="name">
+       </div>
+        Прізвище:
+        <div>
+          <input type="text" name="surname">
+       </div>
+        Вік:
+        <div>
+           <input type="number" name="age">
+       </div>
+
+        <div>
+            <button>submit</button>
+        </div>
+
+    </form>
+
+</div>
+
+
+<div id="two">
+
+    <p id="number"> </p>
+</div>
+
+<div id="divThree"></div>
+<button disabled="disabled" id="prev">Prev</button>
+<button id="next">Next</button>
+
+
+
+<br>
+Next task:
+<form name="howOld">
+    <label> Age:
+    <input type="number" name="age">
+    </label>
+    <button style="height: 40px">How Old are you?</button>
+</form>
+
+
+
+    <script src="HW10_events.js"></script>
+
+</body>
+</html>

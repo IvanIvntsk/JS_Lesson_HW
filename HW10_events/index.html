@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<script>
+
+    let newDate = new Date()
+    let sessionDate = JSON.parse(sessionStorage.getItem(`session`)) || []
+    sessionDate.push(newDate)
+    sessionDate.setItem(`session`, JSON.stringify(sessionDate))
+
+</script>
+<script src="HW10_events.js"></script>
+
+</body>
+</html>

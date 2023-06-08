@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sessions</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+
+
+<script>
+    let sessionDate = JSON.parse(sessionStorage.getItem(`session`))
+    let root = document.getElementById(`root`)
+    sessionDate.forEach(function (sessionDate){
+      let sessionBl = document.createElement(`div`)
+      sessionBl.className = `sessionBl`
+
+      let sessionInfo = document.createElement(`p`)
+      sessionInfo.innerText = `${sessionDate}`
+
+      sessionBl.appendChild(sessionInfo)
+      root.appendChild(sessionBl)
+    })
+
+</script>
+
+<script src="HW10_events.js"></script>
+</body>
+</html>
