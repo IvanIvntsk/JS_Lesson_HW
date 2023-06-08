@@ -5,15 +5,24 @@
     <title>Users</title>
 </head>
 <body>
-
+<ul id="users"></ul>
 <script>
+    // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+    // отримана через додатковий запит (   ХХХ - айді користувача)
 
     fetch(`http://jsonplaceholder.typicode.com/users`)
         .then((response) => response.json())
         .then(users => {
           for (const user of users) {
-              let block = document.createElement(`div`)
-              div.innerHTML = `${user.email};${user.id};${user.name};${user.phone};${user.username};${user.address{user.}};${user};${user};${user};${user};`
+              let li = document.createElement(`li`)
+              let ul = document.getElementById(`users`)
+              let link = document.createElement(`a`)
+
+              link.innerHTML = `${user.id}`
+                li.appendChild(link)
+              ul.appendChild(li)
+
+              document.body.appendChild(ul)
           }
         })
 
