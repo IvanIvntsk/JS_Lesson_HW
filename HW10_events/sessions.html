@@ -11,19 +11,13 @@
 
 
 <script>
-    let sessionDate = JSON.parse(sessionStorage.getItem(`session`))
-    let root = document.getElementById(`root`)
-    sessionDate.forEach(function (sessionDate){
-      let sessionBl = document.createElement(`div`)
-      sessionBl.className = `sessionBl`
-
-      let sessionInfo = document.createElement(`p`)
-      sessionInfo.innerText = `${sessionDate}`
-
-      sessionBl.appendChild(sessionInfo)
-      root.appendChild(sessionBl)
-    })
-
+    const container = document.createElement('div');
+    const sessions = JSON.parse(localStorage.getItem('sessions'));
+    console.log(sessions)
+    for (const session of sessions) {
+        container.innerHTML += `<p>${session}</p>`;
+    }
+    document.body.appendChild(container)
 </script>
 
 <script src="HW10_events.js"></script>

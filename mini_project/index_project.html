@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <link href="style_index.css">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+<div class="usersList"></div>
+
+
+<script>
+
+    // В index.html
+    // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+    // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+    // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
+    // На странице user-details.html:-->
+    // 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули-->
+    // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера-->
+    // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)-->
+    //     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.-->
+    fetch(`http://jsonplaceholder.typicode.com/users`)
+        .then(response => response.json())
+        .then((users) => {
+            let usersList = document.getElementsByClassName(`usersList`)[0]
+            for (const user of users) {
+                let div = document.createElement(`div`)
+                div.innerHTML = `<b>ID user: ${user.id}</b> <i>${user.name}</i>`
+                usersList.appendChild(div)
+
+            let buttonDetails = document.createElement(`button`)
+                buttonDetails.innerText = `Details`
+                usersList.append(div,buttonDetails)
+
+                let buttonPost = document.createElement(`button`)
+                buttonPost.innerText = `post of current user`
+                usersList.appendChild(buttonPost)
+
+                buttonPost.onclick = () => {
+                    location.href = `../mini_project/index_postDetails.html?userId=${user.id}/posts`
+                }
+
+                buttonDetails.onclick = () => {
+                location.href = `../mini_project/user-details.html?userId=${user.id}`
+                }
+            }
+
+        })
+
+</script>
+
+
+</body>
+</html>
+
+
+<!--// value.forEach(user => {-->
+<!--//     let creatDiv = document.createElement(`div`)-->
+<!--//     let id = document.createElement(`span`)-->
+<!--//     let name = document.createElement(`span`)-->
+<!--//-->
+<!--//     creatDiv.classList.add(`creatDiv`)-->
+<!--//-->
+<!--//     id.innerText = `ID user :${user.id}`-->
+<!--//-->
+<!--//     name.innerText = `Name: ${user.name}`-->
+<!--//-->
+<!--//     creatDiv.append(id,name)-->
+<!--//-->
+<!--//     document.body.appendChild(creatDiv)-->
+<!--//-->
+<!--//     let button = document.createElement(`button`)-->
+<!--//     button.href = `user-details.html?user=id${user.id}`-->
+<!--//     button.innerText = `Details`-->
+<!--//-->
+<!--//     creatDiv.appendChild(button)-->
+<!--//-->
+<!--// })-->
+<!--//         })-->
