@@ -47,7 +47,7 @@
                 usersList.appendChild(buttonPost)
 
                 buttonPost.onclick = () => {
-                    location.href = `../mini_project/index_postDetails.html?userId=${user.id}/posts`
+                    location.href = `../mini_project/index_postDetails.html?userId=${user.id}`
                 }
 
                 buttonDetails.onclick = () => {
@@ -62,28 +62,3 @@
 
 </body>
 </html>
-
-
-<!--// value.forEach(user => {-->
-<!--//     let creatDiv = document.createElement(`div`)-->
-<!--//     let id = document.createElement(`span`)-->
-<!--//     let name = document.createElement(`span`)-->
-<!--//-->
-<!--//     creatDiv.classList.add(`creatDiv`)-->
-<!--//-->
-<!--//     id.innerText = `ID user :${user.id}`-->
-<!--//-->
-<!--//     name.innerText = `Name: ${user.name}`-->
-<!--//-->
-<!--//     creatDiv.append(id,name)-->
-<!--//-->
-<!--//     document.body.appendChild(creatDiv)-->
-<!--//-->
-<!--//     let button = document.createElement(`button`)-->
-<!--//     button.href = `user-details.html?user=id${user.id}`-->
-<!--//     button.innerText = `Details`-->
-<!--//-->
-<!--//     creatDiv.appendChild(button)-->
-<!--//-->
-<!--// })-->
-<!--//         })-->

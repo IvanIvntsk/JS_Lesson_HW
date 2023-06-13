@@ -9,6 +9,7 @@
 <div class="usersList"></div>
 <script>
 
+
     let userId = new URL (location.href).searchParams.get(`userId`);
 
     fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)

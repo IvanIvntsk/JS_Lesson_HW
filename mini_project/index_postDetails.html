@@ -5,62 +5,46 @@
     <title>Posts</title>
 </head>
 <body>
-<div id="userList"></div>
+<div id="postList"></div>
 <script>
 
-    let userId = new URL(location.href).searchParams.get('UserId');
-
+    let userId = new URL (location.href).searchParams.get(`userId`);
+    console.log(userId)
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
-        .then(response => response.json());
-        .then((user) => {
+        .then(response => response.json()
+        .then(result => {
 
-    })
+            const posts = result;
+            console.log(posts)
 
+            let postList = document.getElementById(`postList`)
+            let ul = document.createElement(`ul`)
 
+            postList.append(ul)
 
-    // let usersList = document.getElementById(`userList`)[0];
-    //
-    // for (const user of users) {
-    //     let div = document.createElement(`div`)
-    //     div.innerText = `<b>ID user: ${user.title}</b> <i>${user.body}</i>`
-    //     usersList.appendChild(div)
-    //
-    //     document.body.appendChild(usersList)
-    //
-    // }
+            for (const post of posts) {
+                let li = document.createElement(`li`)
 
-    // function userPost() {
-    //     let title = document.createElement('h1')
-    //     let user = document.createElement('h2');
-    //     let infoBlock = document.createElement('div');
-    //         infoBlock.classList.add('post');
-    //
-    //
-    //
-    //
-    //         infoBlock.append(title, user);
-    //         document.body.append(infoBlock);
-    //
-    //     }
-    //
-    //
-    // function foo (user) {
-    //     const infoArr = [];
-    //
-    //     function handler(user) {
-    //         for (const prop in user) {
-    //             if(typeof user[prop] === 'object') {
-    //                 handler(user[prop]);
-    //             } else {
-    //                 const p = document.createElement('p');
-    //                 p.innerHTML = `<b>${prop}</b>: ${user[prop]}`;
-    //                 infoArr.push(p);
-    //             }
-    //         }
-    //     }
-    //     handler(user);
-    //     return infoArr
-    // }
+                ul.appendChild(li)
+
+                let h2 = document.createElement(`h2`)
+                let p = document.createElement(`p`)
+
+                let buttonPostDetail = document.createElement(`button`)
+                buttonPostDetail.innerText = `Post detail info`
+
+                h2.innerHTML = `${post.title}`
+                p.innerHTML = `${post.body}`
+
+                li.append(h2, p)
+
+                h2.appendChild(buttonPostDetail)
+
+                console.log(post)
+
+            }
+
+        }))
 
 </script>
 
