@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <title>Title Post</title>
 </head>
 <body>
 <div id="postList"></div>
@@ -28,20 +28,23 @@
                 ul.appendChild(li)
 
                 let h2 = document.createElement(`h2`)
-                let p = document.createElement(`p`)
+                // let p = document.createElement(`p`)
 
                 let buttonPostDetail = document.createElement(`button`)
                 buttonPostDetail.innerText = `Post detail info`
 
                 h2.innerHTML = `${post.title}`
-                p.innerHTML = `${post.body}`
+                // p.innerHTML = `${post.body}`
 
-                li.append(h2, p)
+                li.append(h2)
 
                 h2.appendChild(buttonPostDetail)
 
                 console.log(post)
 
+                buttonPostDetail.onclick = () =>{
+                    location.href = `../mini_project/PostDetails.html?postId=${post.id}`
+                }
             }
 
         }))
