@@ -1,0 +1,40 @@
+let userId = new URL (location.href).searchParams.get(`userId`);
+
+fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
+    .then(response => response.json())
+    .then((user) => {
+        let usersList = document.getElementsByClassName(`usersList`)[0]
+
+        let ul = document.createElement(`ul`)
+
+        usersList.appendChild(ul)
+        info(user, ul)
+
+    })
+function liCreator(key, obj, parent) {
+    let li = document.createElement(`li`)
+    li.innerHTML = `<b>${key}</b> <i>${obj}</i>`
+    parent.appendChild(li)
+}
+
+function ulCreator(key, obj, parent){
+    let li = document.createElement(`li`)
+    let ul = document.createElement(`ul`)
+
+    li.innerHTML = `<b>${key}:</b>`
+
+    parent.appendChild(li)
+    li.appendChild(ul)
+
+    info(obj, ul)
+}
+
+function info(obj, parent) {
+    for (let key in obj) {
+        if (typeof obj[key] === `object`) {
+            ulCreator(key, obj[key], parent)
+        } else {
+            liCreator(key, obj[key], parent)
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Post</title>
+</head>
+<body>
+
+<div id="postList"></div>
+
+<script>
+
+    let userId = new URL (location.href).searchParams.get(`userId`);
+    console.log(userId)
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+        .then(response => response.json()
+            .then(result => {
+
+                const posts = result;
+                console.log(posts)
+
+                let postList = document.getElementById(`postList`)
+                let ul = document.createElement(`ul`)
+
+                postList.appendChild(ul)
+
+                for (const post of posts) {
+                    let li = document.createElement(`li`)
+
+                    ul.appendChild(li)
+
+                    let h2 = document.createElement(`h2`)
+                    // let p = document.createElement(`p`)
+
+                    let buttonPostDetail = document.createElement(`button`)
+                    buttonPostDetail.innerText = `Post detail info`
+
+                    h2.innerHTML = `${post.title}`
+                    // p.innerHTML = `${post.body}`
+
+                    li.append(h2)
+
+                    h2.appendChild(buttonPostDetail)
+
+                    console.log(post)
+
+                    buttonPostDetail.onclick = () =>{
+                        location.href = `../html_file/post-details.html?postId=${post.id}`
+                    }
+                }
+
+            }))
+
+</script>
+</body>
+</html>
