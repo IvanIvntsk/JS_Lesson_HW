@@ -1,4 +1,11 @@
+body{
+    margin: 0;
+}
+h1{
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 #detailPost{
-display: flex;
-    align-items: center;
+/*display: flex;*/
+/*    align-items: center;*/
 }

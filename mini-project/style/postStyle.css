@@ -31,7 +31,31 @@ h1{
 
 }
 .liPostTitle{
-    font-size: 16px;
+    font-size: 15px;
     /*border: 1px solid green;*/
     border-radius: 50px;
 }
+
+/*#postList{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+.ulPostTitle{
+    list-style-type: none;
+    padding: 0;
+    text-align: start;
+    margin: 0;
+
+}
+.liPostTitle{
+   display: inline-block;
+    margin: 8px;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 15px;
+
+}*/
