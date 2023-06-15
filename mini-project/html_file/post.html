@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>User Post</title>
+
+    <link rel="stylesheet" href="../style/postStyle.css">
+
 </head>
 <body>
-
+<h1>Title of Post</h1>
 <div id="postList"></div>
 
 <script>
@@ -24,30 +27,34 @@
 
                 postList.appendChild(ul)
 
+                ul.classList.add(`ulPostTitle`)
+
+
                 for (const post of posts) {
                     let li = document.createElement(`li`)
+
+                    li.classList.add(`liPostTitle`)
 
                     ul.appendChild(li)
 
                     let h2 = document.createElement(`h2`)
-                    // let p = document.createElement(`p`)
+                    let a = document.createElement(`a`)
+                    // let buttonPostDetail = document.createElement(`button`)
+                    // buttonPostDetail.innerText = `Post detail info`
 
-                    let buttonPostDetail = document.createElement(`button`)
-                    buttonPostDetail.innerText = `Post detail info`
-
-                    h2.innerHTML = `${post.title}`
-                    // p.innerHTML = `${post.body}`
-
+                    a.innerHTML = `${post.title}`
+                    a.href = `../html_file/post-details.html?postId=${post.id}`
+                    h2.appendChild(a)
                     li.append(h2)
 
-                    h2.appendChild(buttonPostDetail)
+                    // h2.appendChild(buttonPostDetail)
 
                     console.log(post)
 
-                    buttonPostDetail.onclick = () =>{
-                        location.href = `../html_file/post-details.html?postId=${post.id}`
+                    // buttonPostDetail.onclick = () =>{
+                    //     location.href = `../html_file/post-details.html?postId=${post.id}`
                     }
-                }
+
 
             }))
 

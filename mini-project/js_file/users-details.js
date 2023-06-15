@@ -10,16 +10,31 @@ fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
         usersList.appendChild(ul)
         info(user, ul)
 
+        let buttonPost = document.createElement(`button`)
+        buttonPost.innerText = `Post of current user`
+        usersList.appendChild(buttonPost)
+
+        buttonPost.classList.add(`buttonPost`)
+
+        buttonPost.onclick = () => {
+            location.href = `../html_file/post.html?userId=${user.id}`
+        }
+
     })
 function liCreator(key, obj, parent) {
     let li = document.createElement(`li`)
-    li.innerHTML = `<b>${key}</b> <i>${obj}</i>`
+    li.innerHTML = `<b>${key}</b> ${obj}`
     parent.appendChild(li)
+
+    li.style.listStyle = `none`
 }
 
 function ulCreator(key, obj, parent){
     let li = document.createElement(`li`)
     let ul = document.createElement(`ul`)
+
+    ul.style.listStyle = `none`
+    li.style.listStyle = `none`
 
     li.innerHTML = `<b>${key}:</b>`
 

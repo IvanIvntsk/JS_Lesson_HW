@@ -1,0 +1,27 @@
+.buttonPost{
+margin: 0 auto;
+padding: 20px 0;
+display: block;
+background: linear-gradient(to top, black, slategrey);
+width: 80%;
+border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186,186,186);
+color: white;
+font-size: 20px;
+border-radius: 80px;
+cursor: pointer;
+border: none;
+}
+/*кнопка на 90% менше ніж ширина сторінки це щось дуже велике на скільки я розумію))*/
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.usersList{
+    font-size: 19px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

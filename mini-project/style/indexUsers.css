@@ -1,0 +1,52 @@
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.usersList{
+    width: 100%;
+    height: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.divMainBlock{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    gap: 10px;
+    font-size: 18px;
+    font-family: Calibri;
+
+}
+.buttonDetails{
+    margin: 0 auto;
+    padding: 20px 0;
+    display: block;
+    background: linear-gradient(to top,black, cyan);
+    width: 20%;
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186,186,186);
+    color: white;
+    font-size: 20px;
+    border-radius: 80px;
+    cursor: pointer;
+    border: none;
+
+}
+/*.buttonPost{*/
+/*    margin: 0 auto;*/
+/*    padding: 20px 0;*/
+/*    display: block;*/
+/*    background: linear-gradient(to top, black, slategrey);*/
+/*    width: 20%;*/
+/*    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186,186,186);*/
+/*    color: white;*/
+/*    font-size: 20px;*/
+/*    border-radius: 80px;*/
+/*    cursor: progress;*/
+/*    border: none;*/
+/*}*/
