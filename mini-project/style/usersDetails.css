@@ -15,6 +15,7 @@ border: none;
 body{
     height: 100vh;
     width: 100vw;
+    background-color: wheat;
 }
 .usersList{
     font-size: 19px;
@@ -24,4 +25,11 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkslategrey;
+    margin-bottom: 10px;
 }

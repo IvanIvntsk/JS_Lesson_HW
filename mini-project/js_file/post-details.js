@@ -10,12 +10,19 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         let h1 = document.createElement(`h1`)
         let p = document.createElement(`p`)
         let id = document.createElement(`p`)
+        let div = document.createElement(`div`)
 
-        h1.innerHTML = `${details.title}`
-        id.innerHTML = `Post ID: ${details.id}`
-        p.innerHTML = `<i>${details.body}</i>`
+        div.append(h1, id, p)
+        h1.innerHTML = `<i>Title:</i> 
+        <br>
+        ${details.title}`
+        id.innerHTML = `<b>Post ID:</b> ${details.id}`
+        p.innerHTML = `<b>Body:</b> <br>${details.body}`
 
-        detailPost.append(h1, p , id)
+        div.classList.add(`divTitle`)
+        id.classList.add(`idTitle`)
+
+        detailPost.appendChild(div)
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then (response => response.json())
             .then(result =>{
@@ -23,8 +30,12 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                 console.log(comments)
 
                 let ul = document.createElement(`ul`)
+                ul.classList.add(`ulStyle`)
+
                 for (const comment of comments) {
+
                     let li = document.createElement(`li`)
+                    li.classList.add(`liStyle`)
 
                     ul.appendChild(li)
 
@@ -33,9 +44,9 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                     let email = document.createElement(`h3`)
                     let body = document.createElement(`p`)
 
-                    id.innerHTML = `Comment ID :${comment.id}`
-                    name.innerHTML = `Name:${comment.name}`
-                    email.innerHTML = `Email:${comment.email}`
+                    id.innerHTML = `<h2>Comment</h2> <b>ID:</b> ${comment.id}`
+                    name.innerHTML = `Name: ${comment.name}`
+                    email.innerHTML = `Email: ${comment.email}`
                     body.innerHTML = `${comment.body}`
 
                     li.append(id, name, email, body)
