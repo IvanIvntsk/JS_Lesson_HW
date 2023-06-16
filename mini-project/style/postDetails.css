@@ -32,8 +32,8 @@ body{
 
 }
 .liStyle{
+
     flex-wrap: wrap;
-    flex-direction: column;
     width: 23%;
     margin-bottom: 10px;
     padding: 10px;

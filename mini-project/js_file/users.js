@@ -4,7 +4,7 @@ fetch(`http://jsonplaceholder.typicode.com/users`)
         let usersList = document.getElementsByClassName(`usersList`)[0]
         for (const user of users) {
             let div = document.createElement(`div`)
-            div.innerHTML = `<i>User №${user.id}</i><b>${user.name}</b>`
+            div.innerHTML = `User №${user.id}&nbsp<b>${user.name}</b>`
             usersList.appendChild(div)
 
             let buttonDetails = document.createElement(`button`)
