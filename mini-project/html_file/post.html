@@ -42,7 +42,7 @@
                     // let buttonPostDetail = document.createElement(`button`)
                     // buttonPostDetail.innerText = `Post detail info`
 
-                    a.innerHTML = `${post.title} &#9668`
+                    a.innerHTML = `${post.title} <i style="color:slategrey">&#9668</i>`
                     a.href = `../html_file/post-details.html?postId=${post.id}`
                     h2.appendChild(a)
                     li.append(h2)

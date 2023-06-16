@@ -1,6 +1,6 @@
 body{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: wheat;
 }
 a{
@@ -37,26 +37,24 @@ h1{
     border-radius: 50px;
 }
 
-/*#postList{
-   display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 
-
-}
-.ulPostTitle{
-    list-style-type: none;
+/*.ulPostTitle{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
     padding: 0;
-    text-align: start;
-    margin: 0;
 
 }
 .liPostTitle{
-   display: inline-block;
-    margin: 8px;
-    padding: 5px;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 18.5%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: wheat;
     font-size: 15px;
-
+    border: 1px solid red;
 }*/
